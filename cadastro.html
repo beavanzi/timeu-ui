@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Meu Time!</title>
+  </head>
+  <body>
+    <header id="header">
+      <a href="index.html">
+        <img src="./images/MeuTime-Logo.png" alt="Meu Time" />
+      </a>
+    </header>
+    <div id="root">
+      <div class="content">
+        <h1>Criar nova conta</h1>
+        <div class="card">
+          <form class="cadastro">
+            <input type="text" placeholder="Nome" name="name" id="name" />
+            <input
+              type="text"
+              placeholder="Apelido"
+              name="nickname"
+              id="nickname"
+            />
+            <input type="text" placeholder="E-mail" name="email" id="email" />
+            <input
+              type="password"
+              placeholder="Senha"
+              name="password"
+              id="password"
+            />
+            <div class="buttons">
+              <button onclick="window.location.href = 'index.html'">
+                voltar
+              </button>
+              <button type="submit" class="submitCadastrar">cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <p>Desenvolvido pelos alunos de Informática</p>
+    </footer>
+  </body>
+
+  <script src="script.js"></script>
+</html>

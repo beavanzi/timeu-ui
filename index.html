@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Meu Time</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <header id="header">
+      <a href="index.html">
+        <img src="./images/MeuTime-Logo.png" alt="Meu Time" />
+      </a>
+    </header>
+    <div id="root">
+      <div class="content">
+        <div class="card">
+          <h1>Bem vindo!</h1>
+          <p>A equipe MeuTime deseja boas vindas!</p>
+          <button class="entrar" onclick="window.location.href = 'login.html'">
+            já faco parte
+          </button>
+          <button
+            class="cadastrar"
+            onclick="window.location.href = 'cadastro.html'"
+          >
+            criar nova conta
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <p>Desenvolvido pelos alunos de Informática</p>
+    </footer>
 
-    <script src="script.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
