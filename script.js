@@ -188,7 +188,7 @@ class TelaCadastro {
   }
 
   ligarCadastro(handler) {
-    const cadastrar = this.getElement(".cadastro");
+    const cadastrar = this.getElement(".formCadastro");
 
     cadastrar.addEventListener("submit", (event) => {
       event.preventDefault();
