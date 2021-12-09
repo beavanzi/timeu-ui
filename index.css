@@ -11,6 +11,11 @@ html {
   margin: 0;
 }
 
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
 #root {
   max-width: 450px;
   margin: 2rem auto;

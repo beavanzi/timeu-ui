@@ -162,6 +162,7 @@ class TelaLogin {
   lidarEntrar(lidarEntrar) {
     const entrar = this.getElement(".formEntrar");
 
+    console.log(entrar);
     entrar.addEventListener("submit", (event) => {
       event.preventDefault();
       console.log("entrar");
