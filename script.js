@@ -96,7 +96,7 @@ class Usuarios {
     }
   }
 
-  remover(id) {
+  remover(nome) {
     const index = this.getPeloNome(nome);
 
     if (index > -1) {
@@ -159,12 +159,13 @@ class TelaLogin {
     return element;
   }
 
-  ligarEntrar(handler) {
+  lidarEntrar(lidarEntrar) {
     const entrar = this.getElement(".formEntrar");
 
     entrar.addEventListener("submit", (event) => {
       event.preventDefault();
-      handler(event.target.email, event.target.password);
+      console.log("entrar");
+      lidarEntrar(event.target.email, event.target.password);
     });
   }
 }
@@ -187,12 +188,12 @@ class TelaCadastro {
     return element;
   }
 
-  ligarCadastro(handler) {
+  lidarCadastro(lidarCadastro) {
     const cadastrar = this.getElement(".formCadastro");
 
     cadastrar.addEventListener("submit", (event) => {
       event.preventDefault();
-      handler(
+      lidarCadastro(
         event.target.name,
         event.target.email,
         event.target.nickname,
@@ -203,23 +204,23 @@ class TelaCadastro {
 }
 
 class ManterUsuarios {
-  constructor(model, viewCadastro, viewLogin) {
-    this.model = model;
+  constructor(modelUsuarios, viewCadastro, viewLogin) {
+    this.modelUsuarios = modelUsuarios;
     this.viewCadastro = viewCadastro;
     this.viewLogin = viewLogin;
 
-    this.viewCadastro.ligarCadastro(this.lidarCadastro);
-    this.viewLogin.ligarEntrar(this.lidarEntrar);
+    this.viewCadastro.lidarCadastro(this.lidarCadastro);
+    this.viewLogin.lidarEntrar(this.lidarEntrar);
   }
 
   lidarCadastro(nome, email, apelido, senha) {
-    console.log(this.model);
-    this.model.criar(nome, email, apelido, senha);
+    this.modelUsuarios.criar(nome, email, apelido, senha);
   }
 
   lidarEntrar(email, senha) {
+    console.log(this.modelUsuarios);
     try {
-      this.model.getConta(email, senha);
+      this.modelUsuarios.getConta(email, senha);
       window.alert("Usuário logado com sucesso!");
     } catch (err) {
       window.alert("Erro no login!");
